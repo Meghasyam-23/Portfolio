@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Website</title>
+    <title>Meghasyam Peddireddy - Personal Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,57 +13,153 @@
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#experience">Work Experience</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#education">Education</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <section id="home">
-            <h1>Welcome to My Personal Website</h1>
-            <p>Howdy, My name is Meghasyam Peddireddy. I am a Junior Majoring in Computer Science at Iowa State University.</p>
-            <img src="photos/Meghasyam.JPG" alt="My Photo" class="home-image">
-        </section>        
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Detailed information about me, my background, and interests.</p>
+        <section id="home" class="section">
+            <div class="container">
+                <img src="photos/Meghasyam.JPG" alt="Meghasyam Peddireddy" class="home-image">
+                <h1>Meghasyam Peddireddy</h1>
+                <p class="tagline">Junior Computer Science Major at Iowa State University</p>
+                <div class="contact-info">
+                    <p><i class="fas fa-envelope"></i> syam@iastate.edu</p>
+                </div>
+            </div>
         </section>
-        <section id="experience">
-            <h2>Work Experience</h2>
-            <ul>
-                <li>Job Title at Company - Duration</li>
-                <li>Job Title at Company - Duration</li>
-            </ul>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>I'm a passionate Computer Science student at Iowa State University, set to graduate in May 2026. With a strong foundation in various programming languages and technologies, I'm constantly seeking opportunities to expand my knowledge and skills in the field of software development and IT.</p>
+            </div>
         </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <ul>
-                <li>Project Name - <a href="project-link">Link</a></li>
-                <li>Project Name - <a href="project-link">Link</a></li>
-            </ul>
+
+        <section id="experience" class="section">
+            <div class="container">
+                <h2>Work Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Desktop Support Technician</h3>
+                        <p>Veterinary Diagnostic Lab</p>
+                        <p class="date">May 2024 - Present</p>
+                        <ul>
+                            <li>Solve IT problems at the Veterinary Diagnostic Lab</li>
+                            <li>Resolve IT issues such as setting up Desktops, troubleshooting, and fixing equipment</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Lab Monitor</h3>
+                        <p>Coover Hall - College of Engineering</p>
+                        <p class="date">January 2024 - May 2024</p>
+                        <ul>
+                            <li>Oversee lab safety protocols and personal protective equipment usage</li>
+                            <li>Respond to safety incidents, including administering first aid</li>
+                            <li>Maintain, calibrate, and troubleshoot laboratory equipment</li>
+                            <li>Ensure a clean and organized lab environment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li>Skill 1</li>
-                <li>Skill 2</li>
-            </ul>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card">
+                        <h3>Cyclone Connect App</h3>
+                        <p>Awarded the Best Project in Com S 309: Software Development Practices</p>
+                        <ul>
+                            <li>Managed part of the Frontend for a semester-long app development project</li>
+                            <li>Designed an intuitive interface using Android Studio</li>
+                            <li>Collaborated with the back-end team for seamless integration</li>
+                        </ul>
+                    </div>
+                    <div class="project-card">
+                        <h3>The Cinematic Almanac</h3>
+                        <p>Com S 319: Software Construction and User Interfaces</p>
+                        <ul>
+                            <li>Developing a dynamic cinema-focused website</li>
+                            <li>Utilizing Node.js for backend logic and React for responsive front-end</li>
+                            <li>Ensuring seamless integration between backend and front-end</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
-        <section id="education">
-            <h2>Education</h2>
-            <p>Details about your education.</p>
+
+        <section id="skills" class="section">
+            <div class="container">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fas fa-code"></i>
+                        <p>Python, C, Java</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-laptop-code"></i>
+                        <p>HTML5, CSS, JavaScript</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-database"></i>
+                        <p>Data Structures and Algorithms</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-desktop"></i>
+                        <p>Linux, Mac, Windows</p>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-tools"></i>
+                        <p>Google Workspace, Microsoft Office</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="section">
+            <div class="container">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Bachelor of Science in Computer Science</h3>
+                    <p>Iowa State University, Ames, IA</p>
+                    <p class="date">Anticipated Graduation: May 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="involvement" class="section">
+            <div class="container">
+                <h2>Leadership & Involvement</h2>
+                <ul class="involvement-list">
+                    <li>Martial Arts Club</li>
+                    <li>Computer Science and Software Engineering Club</li>
+                    <li>Data Science Club</li>
+                    <li>Web Development Club</li>
+                    <li>Cricket Club</li>
+                    <li>A Novel Idea</li>
+                    <li>Google Developer Club</li>
+                </ul>
+            </div>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2024 My Personal Website. All rights reserved.</p>
-        <ul>
-            <li><a href="https://www.linkedin.com/in/meghasyam-peddireddy/">LinkedIn</a></li>
-            <li><a href="https://github.com/Meghasyam-23">GitHub</a></li>
-        </ul>
+        <div class="container">
+            <p>&copy; 2024 Meghasyam Peddireddy. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="https://www.linkedin.com/in/meghasyam-peddireddy/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                <li><a href="https://github.com/Meghasyam-23" target="_blank"><i class="fab fa-github"></i></a></li>
+            </ul>
+        </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
