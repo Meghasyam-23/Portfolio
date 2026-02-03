@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roguelike Game Engine — Meghasyam Peddireddy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles-new.css">
+    <link rel="stylesheet" href="../styles-project.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">Meghasyam Peddireddy</a>
+            <ul class="nav-links">
+                <li><a href="/projects.html">Work</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#cv">CV</a></li>
+                <li><a href="mailto:syam@iastate.edu" class="cta-link">Get in touch</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-hero">
+            <div class="section-container">
+                <div class="hero-breadcrumb">
+                    <a href="/projects.html">Work</a>
+                    <span>/</span>
+                    <span>Roguelike Game Engine</span>
+                </div>
+                
+                <h1 class="hero-title">Roguelike Game Engine</h1>
+                <p class="hero-subtitle">
+                    Complete dungeon-based roguelike in C/C++ with procedural generation, Dijkstra pathfinding for intelligent NPC behavior, and persistent save/load mechanics.
+                </p>
+
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">Jan 2025 - May 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">Systems Programmer</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Team</span>
+                        <span class="meta-value">Solo</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Status</span>
+                        <span class="meta-value">Complete </span>
+                    </div>
+                </div>
+
+                <div class="hero-tech-stack">
+                    <span class="tech-badge">C/C++</span>
+                    <span class="tech-badge">Ncurses</span>
+                    <span class="tech-badge">Procedural Generation</span>
+                    <span class="tech-badge">Pathfinding</span>
+                    <span class="tech-badge">Systems Design</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>The Challenge</h2>
+                <p>
+                    Build a complete game engine from scratch in C/C++: dungeon generation, NPC AI, player mechanics, save/load system, all rendered in a terminal. The capstone project required deep systems thinking: memory management, algorithmic efficiency, and architecture that supports extensibility.
+                </p>
+                <p>
+                    No game engines, no graphics libraries just raw systems programming. Com S 327 final project.
+                </p>
+            </div>
+        </section>
+
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>Your Role</h2>
+                <div class="roles-grid">
+                    <div class="role-card">
+                        <h3>Game Engine Architecture</h3>
+                        <p>
+                            Designed modular engine with clear separation: game state, rendering, AI, physics. Extensible architecture allows adding new features without rewriting core systems.
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Procedural Dungeon Generation</h3>
+                        <p>
+                            Implemented recursive room generation ensuring playable dungeons. Configured room sizes, corridors, spawn points. Every dungeon is guaranteed solvable.
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Pathfinding & AI</h3>
+                        <p>
+                            Built Dijkstra's algorithm for intelligent enemy pathfinding. Monsters can navigate obstacles and hunt the player. Handles both tunneling and non-tunneling enemies.
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Persistence & Serialization</h3>
+                        <p>
+                            Implemented binary save/load system preserving game state: dungeon layout, enemy positions, player inventory. Fast loading, minimal file size.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>Technical Architecture</h2>
+                <p>
+                    Layered architecture: Game State → Logic Layer → Rendering → I/O. Each layer communicates through well-defined interfaces.
+                </p>
+                <div class="architecture-diagram">
+                    <div class="arch-layer">
+                        <h3>Game Logic</h3>
+                        <p>Core Systems</p>
+                        <ul>
+                            <li>Player mechanics</li>
+                            <li>Combat system</li>
+                            <li>Equipment management</li>
+                            <li>Turn-based gameplay</li>
+                        </ul>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <h3>AI & Pathfinding</h3>
+                        <p>Enemy Behavior</p>
+                        <ul>
+                            <li>Dijkstra's algorithm</li>
+                            <li>Monster states</li>
+                            <li>Line-of-sight</li>
+                            <li>Difficulty scaling</li>
+                        </ul>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <h3>I/O & Persistence</h3>
+                        <p>Data Management</p>
+                        <ul>
+                            <li>Ncurses rendering</li>
+                            <li>Keyboard input</li>
+                            <li>Save/load system</li>
+                            <li>File serialization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>Key Technical Decisions</h2>
+
+                <div class="decision-group">
+                    <h3>1. Dijkstra's Algorithm Over A*</h3>
+                    <p>
+                        Both solve pathfinding, but Dijkstra is simpler to implement and sufficient for small dungeons. A* would be overkill.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Why Dijkstra:</strong> Guarantees shortest path, computationally simpler than A*
+                        </li>
+                        <li>
+                            <strong>Benefit:</strong> Believable NPC movement without complex heuristics
+                        </li>
+                        <li>
+                            <strong>Constraint:</strong> Doesn't scale to massive maps, but dungeons are small
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>2. Turn-Based Over Real-Time</h3>
+                    <p>
+                        Real-time roguelikes require sophisticated input handling and frame-perfect gameplay. Turn-based is simpler and classic roguelike style.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Why turn-based:</strong> Reduces complexity, matches roguelike tradition
+                        </li>
+                        <li>
+                            <strong>Benefit:</strong> No frame-rate dependencies, clean logic
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>3. Binary Serialization for Saves</h3>
+                    <p>
+                        Could use JSON, but binary is faster and more compact. Given game runs in terminal, file size matters.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Speed:</strong> Binary I/O 10× faster than parsing JSON
+                        </li>
+                        <li>
+                            <strong>Size:</strong> ~5KB save vs. ~50KB JSON
+                        </li>
+                        <li>
+                            <strong>Trade-off:</strong> Not human-readable, but simpler for binary data
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>4. Ncurses for Terminal Rendering</h3>
+                    <p>
+                        Terminal game constraint. Ncurses abstracts platform differences and provides color, cursor control, etc.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Portable:</strong> Works on Linux, macOS, Windows
+                        </li>
+                        <li>
+                            <strong>Color support:</strong> Limited but sufficient for roguelike
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>What I Learned</h2>
+
+                <div class="lesson-card">
+                    <h3>1. Low-Level Programming Teaches Discipline</h3>
+                    <p>
+                        No frameworks, no abstractions. Memory management, pointer arithmetic, algorithmic complexity all matter. Learned to write efficient code.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>2. Pathfinding is Fundamental</h3>
+                    <p>
+                        Dijkstra, A*, BFS these algorithms appear everywhere. Understanding them deeply is essential for game/AI development.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>3. Testing Saves Time</h3>
+                    <p>
+                        Procedural generation is tricky easy to create unplayable dungeons. Automated testing caught edge cases early.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>4. Systems Thinking Scales</h3>
+                    <p>
+                        Modular design meant adding features (new enemy types, items, dungeon obstacles) was easy. Architecture matters.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>Links</h2>
+                <div class="links-grid">
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="link-card">
+                        <h3>GitHub Repository</h3>
+                        <p>Full source code and documentation</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="link-card">
+                        <h3>Design Document</h3>
+                        <p>Architecture, algorithms, data structures</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="link-card">
+                        <h3>Playable Build</h3>
+                        <p>Compiled executable (Linux/macOS)</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-navigation">
+            <div class="section-container">
+                <h2>Other Projects</h2>
+                <div class="nav-projects">
+                    <a href="ames-nocturne.html" class="nav-project-card">
+                        <span class="nav-label">Game Dev</span>
+                        <h3>Ames Nocturne</h3>
+                        <p>Full-stack 2D game with procedural generation</p>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="cyclone-connect.html" class="nav-project-card">
+                        <span class="nav-label">Mobile</span>
+                        <h3>Cyclone Connect</h3>
+                        <p>Award-winning Android app</p>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="cinematic-almanac.html" class="nav-project-card">
+                        <span class="nav-label">Full-Stack</span>
+                        <h3>The Cinematic Almanac</h3>
+                        <p>MERN web application</p>
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="section-container">
+                <h2>Let's talk</h2>
+                <p>
+                    Interested in game development, algorithms, or systems programming? Let's connect.
+                </p>
+                <div class="cta-links">
+                    <a href="mailto:syam@iastate.edu" class="contact-link">
+                        <span class="contact-icon">✉</span>
+                        syam@iastate.edu
+                    </a>
+                    <a href="https://linkedin.com/in/meghasyam-peddireddy" target="_blank" class="contact-link">
+                        <span class="contact-icon">in</span>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="contact-link">
+                        <span class="contact-icon">◇</span>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 Meghasyam Peddireddy</p>
+            <div class="footer-divider">•</div>
+            <p>Designed & built with intention</p>
+        </div>
+    </footer>
+
+    <script src="../main-new.js"></script>
+</body>
+</html>

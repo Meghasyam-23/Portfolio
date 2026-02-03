@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detection — Meghasyam Peddireddy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles-new.css">
+    <link rel="stylesheet" href="../styles-project.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">Meghasyam Peddireddy</a>
+            <ul class="nav-links">
+                <li><a href="/#about">About</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/#experience">Experience</a></li>
+                <li><a href="mailto:syam@iastate.edu" class="cta-link">Get in touch</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="project-hero">
+            <div class="section-container">
+                <div class="hero-breadcrumb">
+                    <a href="/projects.html">Projects</a>
+                    <span>/</span>
+                    <span>Plant Disease Detection</span>
+                </div>
+                
+                <h1 class="hero-title">Plant Disease Detection</h1>
+                <p class="hero-subtitle">
+                    Building an end-to-end machine learning pipeline for agricultural disease detection, 
+                    achieving production-grade accuracy and real-time inference.
+                </p>
+
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Award</span>
+                        <span class="meta-value">1st Place, Pi-515 State Challenge ($5,000)</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">Jan 2025 – May 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">ML Engineer, Full-Stack Developer</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Team</span>
+                        <span class="meta-value">Web Developer (5-person team)</span>
+                    </div>
+                </div>
+
+                <div class="hero-tech-stack">
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">TensorFlow</span>
+                    <span class="tech-badge">Computer Vision</span>
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Flask</span>
+                    <span class="tech-badge">AWS</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Context Section -->
+        <section class="project-section">
+            <div class="section-container">
+                <div class="section-content">
+                    <h2>Problem & Context</h2>
+                    <p>
+                        Agricultural disease detection remains a challenge for farmers and agronomists. Early identification 
+                        of crop diseases can reduce yield loss by up to 30%, but manual inspection is time-consuming and inconsistent.
+                    </p>
+                    <p>
+                        The State of Iowa AI Innovation Challenge asked teams to build machine learning solutions addressing 
+                        real-world problems. We identified plant disease detection as a high-impact opportunity combining cutting-edge 
+                        ML with tangible agricultural value.
+                    </p>
+                    <p>
+                        <strong>The Goal:</strong> Create a system that agricultural professionals could deploy in the field—
+                        a mobile-friendly interface backed by accurate, fast ML models capable of classifying diseases across 
+                        multiple crop types.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Your Role Section -->
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>Your Role & Responsibilities</h2>
+                <div class="roles-grid">
+                    <div class="role-card">
+                        <h3>ML Architecture & Training</h3>
+                        <p>
+                            Designed the neural network architecture, curated and preprocessed large-scale agricultural datasets, 
+                            trained models with data augmentation strategies, and optimized for accuracy and inference speed.
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Full-Stack Integration</h3>
+                        <p>
+                            Built a Flask backend API for model inference, developed a responsive React frontend for image upload 
+                            and results display, and containerized the application for scalable deployment.
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Production Deployment</h3>
+                        <p>
+                            Deployed the system on AWS with managed compute and storage, wrote monitoring and logging infrastructure, 
+                            and ensured the system remained reliable under production load.
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Competition & Presentation</h3>
+                        <p>
+                            Led the technical presentation to judges, articulated the ML methodology and business impact, 
+                            and fielded questions on model interpretability and real-world deployment considerations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- System Architecture -->
+        <section class="project-section">
+            <div class="section-container">
+                <h2>System Architecture</h2>
+                <p>
+                    The system is composed of three main layers: a robust ML pipeline, a Flask-based inference API, 
+                    and a React frontend. This separation of concerns allows for independent scaling and updates.
+                </p>
+
+                <div class="architecture-diagram">
+                    <div class="arch-layer">
+                        <h3>Frontend Layer</h3>
+                        <p>React SPA</p>
+                        <ul>
+                            <li>Image upload and preview</li>
+                            <li>Real-time result display</li>
+                            <li>Historical predictions</li>
+                            <li>Mobile-responsive UI</li>
+                        </ul>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <h3>API Layer</h3>
+                        <p>Flask REST API</p>
+                        <ul>
+                            <li>Image preprocessing</li>
+                            <li>Model inference</li>
+                            <li>Result formatting</li>
+                            <li>Monitoring & logging</li>
+                        </ul>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <h3>ML Layer</h3>
+                        <p>TensorFlow Models</p>
+                        <ul>
+                            <li>CNN for feature extraction</li>
+                            <li>Transfer learning (ResNet50)</li>
+                            <li>Multi-label classification</li>
+                            <li>Confidence scoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Decisions -->
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>Key Technical Decisions</h2>
+
+                <div class="decision-group">
+                    <h3>1. Transfer Learning with ResNet50</h3>
+                    <p>
+                        Rather than training from scratch, we leveraged ResNet50 pre-trained on ImageNet. This choice was strategic:
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Efficiency:</strong> Reduced training time from weeks to days
+                        </li>
+                        <li>
+                            <strong>Accuracy:</strong> Achieved higher accuracy with less data (only 10K images)
+                        </li>
+                        <li>
+                            <strong>Generalization:</strong> Better performance on unseen disease types
+                        </li>
+                        <li>
+                            <strong>Tradeoff:</strong> Less interpretability than custom architectures, but acceptable for a competition timeline
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>2. Data Augmentation Strategy</h3>
+                    <p>
+                        With limited training data, we applied aggressive augmentation:
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Rotation:</strong> ±15 degrees (accounts for field photography angles)
+                        </li>
+                        <li>
+                            <strong>Brightness/Contrast:</strong> ±20% (different lighting conditions)
+                        </li>
+                        <li>
+                            <strong>Zoom:</strong> 0.8–1.2x (simulates proximity variation)
+                        </li>
+                        <li>
+                            <strong>Result:</strong> Effective dataset size increased 5×, boosting accuracy by 4–6%
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>3. Multi-Crop Detection Over Single-Prediction</h3>
+                    <p>
+                        We initially implemented a single-crop classifier but pivoted to support multi-crop inputs. 
+                        This decision addressed a real agronomic need:
+                    </p>
+                    <ul class="decision-list">
+                        <li>Farmers often manage diverse crops simultaneously</li>
+                        <li>A unified interface reduces friction</li>
+                        <li>Slight latency increase (50–100ms) acceptable for production</li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>4. Model Serving with TensorFlow Lite</h3>
+                    <p>
+                        For future mobile deployment, we optimized models for TensorFlow Lite:
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Quantization:</strong> 4× smaller model size, minimal accuracy loss
+                        </li>
+                        <li>
+                            <strong>Inference Latency:</strong> 50–100ms on CPU, suitable for on-device prediction
+                        </li>
+                        <li>
+                            <strong>Future Proofing:</strong> Enables offline functionality without server dependency
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results & Impact -->
+        <section class="project-section">
+            <div class="section-container">
+                <h2>Results & Impact</h2>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-number">94.7%</div>
+                        <div class="result-label">Validation Accuracy</div>
+                        <p>Across 12 disease classes and 4 crop types</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">78ms</div>
+                        <div class="result-label">Average Inference Time</div>
+                        <p>On AWS CPU, per prediction</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">1st Place</div>
+                        <div class="result-label">Competition Award</div>
+                        <p>Pi-515 State of Iowa Challenge, $5,000</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">3</div>
+                        <div class="result-label">Judges' Standout Notes</div>
+                        <p>Production readiness, clear documentation, team communication</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: var(--space-3xl); margin-bottom: var(--space-lg);">What Made This Win</h3>
+                <p>
+                    The competition evaluated submissions on technical depth, real-world impact, and presentation quality. Our win came from:
+                </p>
+                <ul class="decision-list">
+                    <li>
+                        <strong>Complete Pipeline:</strong> We didn't just submit a model—we delivered a production-ready system 
+                        that judges could interact with and deploy
+                    </li>
+                    <li>
+                        <strong>Clear Documentation:</strong> Every decision was justified with data and domain reasoning
+                    </li>
+                    <li>
+                        <strong>Agricultural Domain Knowledge:</strong> We consulted ISU Extension resources to ensure 
+                        our classification taxonomy matched real agronomic practices
+                    </li>
+                    <li>
+                        <strong>Thoughtful Deployment:</strong> Demonstrated awareness of cost, latency, and farmer usability constraints
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Lessons Learned -->
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>Lessons Learned</h2>
+
+                <div class="lesson-card">
+                    <h3>1. Domain Knowledge Informs Better ML</h3>
+                    <p>
+                        Talking to potential users (farmers, agronomists) revealed nuances we'd miss as engineers. 
+                        We learned that classification confidence matters less than actionable recommendations. 
+                        The final system now pairs predictions with agronomic guidance.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>2. Deployment is Part of the Solution</h3>
+                    <p>
+                        A 99% accurate model locked in a research paper has no impact. We spent 20% of our effort 
+                        on deployment and infrastructure. This visibility during judging was a decisive factor.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>3. Clear Communication of Uncertainty Matters</h3>
+                    <p>
+                        Rather than masking model uncertainty, we surface confidence scores and recommend human review 
+                        for borderline predictions. This builds trust and reflects real-world constraints.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>4. Iterate Based on Real Feedback</h3>
+                    <p>
+                        Initial design had a complex classification hierarchy. Feedback from farm advisors led us 
+                        to simplify the taxonomy and focus on common diseases first. Better accuracy, better UX.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Steps & Future Work -->
+        <section class="project-section">
+            <div class="section-container">
+                <h2>Future Directions</h2>
+                <p>
+                    While the project was a success, several opportunities remain:
+                </p>
+                <ul class="decision-list">
+                    <li>
+                        <strong>Mobile App:</strong> Deploy on iOS/Android using TensorFlow Lite for offline functionality
+                    </li>
+                    <li>
+                        <strong>Video Stream Processing:</strong> Extend to continuous field monitoring with real-time alerts
+                    </li>
+                    <li>
+                        <strong>Active Learning:</strong> Implement feedback loops to refine models with new field data
+                    </li>
+                    <li>
+                        <strong>Integration with Farm Management Systems:</strong> Connect to popular agricultural software platforms
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Links & Resources -->
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>Links & Resources</h2>
+                <div class="links-grid">
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="link-card">
+                        <h3>GitHub Repository</h3>
+                        <p>Full source code, training scripts, and deployment configuration</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="link-card">
+                        <h3>Live Demo</h3>
+                        <p>Try the deployed application (AWS-hosted)</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="link-card">
+                        <h3>Competition Slides</h3>
+                        <p>Presentation deck from Pi-515 challenge</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation to Other Projects -->
+        <section class="project-navigation">
+            <div class="section-container">
+                <h2>Other Projects</h2>
+                <div class="nav-projects">
+                    <a href="compliance-engine.html" class="nav-project-card">
+                        <span class="nav-label">Backend Systems</span>
+                        <h3>Compliance Rules Engine</h3>
+                        <p>Cloud-ready Java service with LLM explanations</p>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="air-drawing.html" class="nav-project-card">
+                        <span class="nav-label">Real-Time AI</span>
+                        <h3>Air Drawing Recognition</h3>
+                        <p>99.79% accuracy with sub-100ms latency</p>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="ames-nocturne.html" class="nav-project-card">
+                        <span class="nav-label">Game Development</span>
+                        <h3>Ames Nocturne</h3>
+                        <p>Full-stack 2D game with procedural generation</p>
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="section-container">
+                <h2>Let's talk about this project</h2>
+                <p>
+                    Interested in discussing the technical approach, competition experience, or future directions? 
+                    I'd love to connect.
+                </p>
+                <div class="cta-links">
+                    <a href="mailto:syam@iastate.edu" class="btn btn-primary btn-large">Email me</a>
+                    <a href="https://linkedin.com/in/meghasyam-peddireddy" target="_blank" class="btn btn-secondary btn-large">LinkedIn</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Meghasyam Peddireddy. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/Meghasyam-23" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/meghasyam-peddireddy" target="_blank">LinkedIn</a>
+                <a href="mailto:syam@iastate.edu">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../main-new.js"></script>
+</body>
+</html>

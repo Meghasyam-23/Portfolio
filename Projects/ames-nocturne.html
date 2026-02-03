@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ames Nocturne — Meghasyam Peddireddy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles-new.css">
+    <link rel="stylesheet" href="../styles-project.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">Meghasyam Peddireddy</a>
+            <ul class="nav-links">
+                <li><a href="/projects.html">Work</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#cv">CV</a></li>
+                <li><a href="mailto:syam@iastate.edu" class="cta-link">Get in touch</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-hero">
+            <div class="section-container">
+                <div class="hero-breadcrumb">
+                    <a href="/projects.html">Work</a>
+                    <span>/</span>
+                    <span>Ames Nocturne</span>
+                </div>
+                
+                <h1 class="hero-title">Ames Nocturne</h1>
+                <p class="hero-subtitle">
+                    Full-stack 2D game featuring procedural dungeon generation, AI-driven NPC behavior, custom physics, and modular architecture. Ongoing solo project.
+                </p>
+
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">Jan 2023 – Present</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">Solo Developer</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Status</span>
+                        <span class="meta-value">Ongoing (Playable)</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Scale</span>
+                        <span class="meta-value">5+ playable levels</span>
+                    </div>
+                </div>
+
+                <div class="hero-tech-stack">
+                    <span class="tech-badge">Unity</span>
+                    <span class="tech-badge">C#</span>
+                    <span class="tech-badge">Game Design</span>
+                    <span class="tech-badge">Procedural Generation</span>
+                    <span class="tech-badge">AI Systems</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>The Vision</h2>
+                <p>
+                    A 2D action-adventure game set in a nocturnal environment where the player navigates procedurally-generated dungeons, encounters AI-controlled enemies, and solves spatial puzzles. Every playthrough is unique due to procedural generation while maintaining balanced difficulty and engaging level design.
+                </p>
+                <p>
+                    The project serves as a testbed for systems design: game architecture, AI behavior trees, physics integration, and performance optimization—all in a constrained scope that's actually shippable.
+                </p>
+            </div>
+        </section>
+
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>My Role</h2>
+                <div class="roles-grid">
+                    <div class="role-card">
+                        <h3>Game Architecture & Design</h3>
+                        <p>
+                            Architected core game systems using Unity patterns. ScriptableObjects for data-driven configuration. Observer pattern for events. Modular design allows independent iteration on systems.
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Procedural Generation</h3>
+                        <p>
+                            Implemented seed-based dungeon generation: room layout, obstacle placement, spawn points. Ensures reproducibility while varying based on seed. Guarantees playable dungeons (no impossible layouts).
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>AI & Behavior Systems</h3>
+                        <p>
+                            Built finite state machines for NPC behavior: patrol, chase, idle. NPCs react to player proximity, difficulty scaling adjusts behavior. Pathfinding uses A* for intelligent enemy movement.
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Performance & Polish</h3>
+                        <p>
+                            Optimized frame rate through object pooling, tilemap rendering, physics tweaks. Achieved stable 60 FPS on target hardware. Iterated on feel: responsiveness, camera, particle effects.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>Core Systems</h2>
+                <p>
+                    Game built as interconnected systems: player input → physics → AI → rendering. Each system is testable and independently tunable.
+                </p>
+                <div class="architecture-diagram">
+                    <div class="arch-layer">
+                        <h3>Player System</h3>
+                        <p>Input & Movement</p>
+                        <ul>
+                            <li>Input handling</li>
+                            <li>Character controller</li>
+                            <li>Animation state machine</li>
+                            <li>Health & inventory</li>
+                        </ul>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <h3>AI System</h3>
+                        <p>Enemy Behavior</p>
+                        <ul>
+                            <li>Finite state machine</li>
+                            <li>Pathfinding (A*)</li>
+                            <li>Perception system</li>
+                            <li>Difficulty scaling</li>
+                        </ul>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <h3>World System</h3>
+                        <p>Generation & Physics</p>
+                        <ul>
+                            <li>Procedural dungeons</li>
+                            <li>Physics simulation</li>
+                            <li>Collision handling</li>
+                            <li>Level management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>Key Technical Decisions</h2>
+
+                <div class="decision-group">
+                    <h3>1. Finite State Machines for AI</h3>
+                    <p>
+                        Considered behavior trees (more powerful but complex). FSM simpler, sufficient for game scope, easier to debug.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>States:</strong> Idle, Patrol, Chase, Attack, Flee
+                        </li>
+                        <li>
+                            <strong>Transitions:</strong> Based on player proximity, health, cooldowns
+                        </li>
+                        <li>
+                            <strong>Benefit:</strong> Predictable, easy to extend with new states
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>2. Seed-Based Procedural Generation</h3>
+                    <p>
+                        Deterministic generation ensures players can share seeds and replay same dungeons. No "impossible" layouts.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Algorithm:</strong> Binary space partitioning (BSP) for room layout
+                        </li>
+                        <li>
+                            <strong>Guarantee:</strong> Connected dungeons, guaranteed path to exit
+                        </li>
+                        <li>
+                            <strong>Tuning:</strong> Room count, obstacle density, spawn rates all configurable
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>3. ScriptableObjects for Configuration</h3>
+                    <p>
+                        Game balance (enemy stats, loot tables, difficulty curves) stored as data, not code. Non-programmers can tweak values.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Flexibility:</strong> Iterate on balance without recompiling
+                        </li>
+                        <li>
+                            <strong>Reusability:</strong> One enemy archetype, multiple instances with different stats
+                        </li>
+                        <li>
+                            <strong>Version control:</strong> Easy to track balance changes
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>4. Object Pooling for Performance</h3>
+                    <p>
+                        Spawning/destroying projectiles every frame causes GC spikes. Pre-allocate pool of objects, reuse.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Impact:</strong> 10ms GC pauses → imperceptible
+                        </li>
+                        <li>
+                            <strong>Trade-off:</strong> Slightly more memory, much smoother gameplay
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>Results</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-number">5+</div>
+                        <div class="result-label">Playable Levels</div>
+                        <p>Each with unique procedurally-generated content</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">60 FPS</div>
+                        <div class="result-label">Stable Performance</div>
+                        <p>On target hardware (no GC spikes)</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">8+ Hours</div>
+                        <div class="result-label">Estimated Playtime</div>
+                        <p>Across multiple difficulty levels</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">100%</div>
+                        <div class="result-label">Modular Systems</div>
+                        <p>Independent, testable, extensible</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>What I Learned</h2>
+
+                <div class="lesson-card">
+                    <h3>1. Scope Management is Everything</h3>
+                    <p>
+                        Game development scope creep is notorious. Clear scope (2D, single-player, roguelike) made the project achievable. Resisted temptation to add features.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>2. Game Feel Matters More Than Graphics</h3>
+                    <p>
+                        Spent disproportionate time on responsiveness: input lag, animation timing, camera behavior. "Feel" of gameplay > visual fidelity for engagement.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>3. Iterative Design Through Playtesting</h3>
+                    <p>
+                        What I thought would be fun often wasn't. Showed friends, gathered feedback, iterated. Game design is empirical, not theoretical.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>4. Performance Optimization is Ongoing</h3>
+                    <p>
+                        60 FPS games require constant monitoring. Physics, rendering, AI—any system can cause hiccups if not watched. Profiling isn't optional.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>Links</h2>
+                <div class="links-grid">
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="link-card">
+                        <h3>GitHub Repository</h3>
+                        <p>Full source code with documentation</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="link-card">
+                        <h3>Playable Build</h3>
+                        <p>WebGL build (play in browser)</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="link-card">
+                        <h3>Design Document</h3>
+                        <p>Vision, mechanics, balance notes</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-navigation">
+            <div class="section-container">
+                <h2>Other Projects</h2>
+                <div class="nav-projects">
+                    <a href="plant-disease-detection.html" class="nav-project-card">
+                        <span class="nav-label">AI/ML</span>
+                        <h3>Plant Disease Detection</h3>
+                        <p>ML pipeline, 1st place state challenge</p>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="roguelike.html" class="nav-project-card">
+                        <span class="nav-label">Game Dev</span>
+                        <h3>Roguelike Game Engine</h3>
+                        <p>C/C++ engine with procedural generation</p>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="cyclone-connect.html" class="nav-project-card">
+                        <span class="nav-label">Mobile</span>
+                        <h3>Cyclone Connect</h3>
+                        <p>Award-winning campus app</p>
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="section-container">
+                <h2>Let's talk</h2>
+                <p>
+                    Interested in game development, systems architecture, or AI design? Let's connect.
+                </p>
+                <div class="cta-links">
+                    <a href="mailto:syam@iastate.edu" class="contact-link">
+                        <span class="contact-icon">✉</span>
+                        syam@iastate.edu
+                    </a>
+                    <a href="https://linkedin.com/in/meghasyam-peddireddy" target="_blank" class="contact-link">
+                        <span class="contact-icon">in</span>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="contact-link">
+                        <span class="contact-icon">◇</span>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 Meghasyam Peddireddy</p>
+            <div class="footer-divider">•</div>
+            <p>Designed & built with intention</p>
+        </div>
+    </footer>
+
+    <script src="../main-new.js"></script>
+</body>
+</html>

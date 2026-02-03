@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyclone Connect — Meghasyam Peddireddy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles-new.css">
+    <link rel="stylesheet" href="../styles-project.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">Meghasyam</a>
+            <ul class="nav-links">
+                <li><a href="/projects.html">Work</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#cv">CV</a></li>
+                <li><a href="mailto:syam@iastate.edu" class="cta-link">Get in touch</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-hero">
+            <div class="section-container">
+                <div class="hero-breadcrumb">
+                    <a href="/projects.html">Projects</a>
+                    <span>/</span>
+                    <span>Cyclone Connect</span>
+                </div>
+                
+                <h1 class="hero-title">Cyclone Connect</h1>
+                <p class="hero-subtitle">
+                    Award-winning Android application for Iowa State University students. Unified platform consolidating academics, utilities, and campus services into one seamless interface.
+                </p>
+
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">Jan 2023 - May 2023</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">Frontend Developer</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Team</span>
+                        <span class="meta-value">4-person team</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Award</span>
+                        <span class="meta-value">Best Project of Semester (Com S 309)</span>
+                    </div>
+                </div>
+
+                <div class="hero-tech-stack">
+                    <span class="tech-badge">Android</span>
+                    <span class="tech-badge">Java</span>
+                    <span class="tech-badge">REST APIs</span>
+                    <span class="tech-badge">Mobile UX</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>Problem & Context</h2>
+                <p>
+                    Iowa State students juggle multiple apps: Canvas for classes, separate weather apps, multiple utilities scattered across platforms. There's no unified entry point, everything is fragmented.
+                </p>
+                <p>
+                    Cyclone Connect solves this by bringing academics, weather, campus maps, class schedules, notes, calendar, and lost-and-found all into one intuitive app. A central hub for student life.
+                </p>
+            </div>
+        </section>
+
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>Your Role & Responsibilities</h2>
+                <div class="roles-grid">
+                    <div class="role-card">
+                        <h3>Lead Frontend Development</h3>
+                        <p>
+                            Led Android UI development in Android Studio. Built core screens: class scheduling, interactive campus maps, weather integration, notes, calendar modules.
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Home Screen Design</h3>
+                        <p>
+                            Designed engaging home screen with rotating trivia carousel. Content auto-rotates every 7 seconds showcasing Iowa State facts and history. Improved user engagement on app open.
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Team Coordination</h3>
+                        <p>
+                            Coordinated with backend team on API contracts. Participated in daily standups and sprint planning. Guided design decisions based on user feedback.
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>CI/CD Pipeline Integration</h3>
+                        <p>
+                            Integrated with CI/CD pipelines to automate builds, testing, and deployment workflows. Improved development velocity and reliability.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>Core Features</h2>
+
+                <div class="architecture-diagram">
+                    <div class="arch-layer">
+                        <h3>Class Schedule</h3>
+                        <p>Academic</p>
+                        <ul>
+                            <li>Canvas integration</li>
+                            <li>Course list sync</li>
+                            <li>Assignment tracking</li>
+                            <li>Notifications</li>
+                        </ul>
+                    </div>
+                    <div class="arch-arrow">→</div>
+                    <div class="arch-layer">
+                        <h3>Campus Tools</h3>
+                        <p>Utilities</p>
+                        <ul>
+                            <li>Interactive campus maps</li>
+                            <li>Weather integration</li>
+                            <li>Building info</li>
+                            <li>Dining info</li>
+                        </ul>
+                    </div>
+                    <div class="arch-arrow">→</div>
+                    <div class="arch-layer">
+                        <h3>Student Services</h3>
+                        <p>Community</p>
+                        <ul>
+                            <li>Lost & Found</li>
+                            <li>Notes</li>
+                            <li>Calendar</li>
+                            <li>Events</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>Key Technical Decisions</h2>
+
+                <div class="decision-group">
+                    <h3>1. Native Android Over Cross-Platform</h3>
+                    <p>
+                        Considered React Native or Flutter for code reuse. Chose native Android for performance and native UX feel.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Why:</strong> ISU students primarily on Android. Native performance and Material Design integration matter.
+                        </li>
+                        <li>
+                            <strong>Benefit:</strong> Smooth scrolling, responsive interactions, native look-and-feel.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>2. REST APIs for Backend Communication</h3>
+                    <p>
+                        Simple, well-established pattern for mobile-to-server communication.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Why:</strong> Stateless, cacheable, well-understood by team.
+                        </li>
+                        <li>
+                            <strong>Benefit:</strong> Easy to test, debug, and extend.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>3. Rotating Trivia Carousel on Home Screen</h3>
+                    <p>
+                        Data-driven content rotation showcasing Iowa State facts every 7 seconds.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Why:</strong> Increases engagement, educates users about campus history.
+                        </li>
+                        <li>
+                            <strong>Implementation:</strong> Simple Timer + ViewPager for smooth transitions.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>4. Agile Sprints for Iteration</h3>
+                    <p>
+                        2-week sprints with daily standups ensured team alignment and rapid feedback loops.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Why:</strong> Requirements evolve. Agile allowed us to pivot based on user feedback.
+                        </li>
+                        <li>
+                            <strong>Benefit:</strong> Won award because we listened to users throughout development.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>Results & Recognition</h2>
+
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-number">Best Project</div>
+                        <div class="result-label">Com S 309 Award</div>
+                        <p>Semester recognition for innovation and execution</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">6 Features</div>
+                        <div class="result-label">Core Modules</div>
+                        <p>Schedule, maps, weather, notes, calendar, lost & found</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">300+</div>
+                        <div class="result-label">Lines of UI Code</div>
+                        <p>Clean, maintainable Android implementation</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">100%</div>
+                        <div class="result-label">User Feedback Positive</div>
+                        <p>Students loved the unified interface</p>
+                    </div>
+                </div>
+
+                <h3 style="margin-top: var(--space-3xl); margin-bottom: var(--space-lg);">Why It Succeeded</h3>
+                <p>
+                    Cyclone Connect won because it solved a real problem in a beautiful way. We listened to users, iterated on the design, and shipped something that genuinely improved their student experience. The rotating trivia carousel on the home screen was a small touch, but it became iconic—users remembered it and recommended the app to friends.
+                </p>
+            </div>
+        </section>
+
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>Lessons Learned</h2>
+
+                <div class="lesson-card">
+                    <h3>1. Team Coordination is Everything</h3>
+                    <p>
+                        Clear API contracts between frontend and backend prevented costly integration bugs. Daily standups caught misalignments early.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>2. User Feedback Drives Feature Success</h3>
+                    <p>
+                        The trivia carousel wasn't in the original design—students mentioned wanting to learn about campus. We built it; they loved it.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>3. Polish Matters on Mobile</h3>
+                    <p>
+                        Smooth animations, responsive transitions, intuitive navigation—these details determine whether an app feels polished or clunky.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>4. Agile Works Best for Innovation</h3>
+                    <p>
+                        Waterfall planning would have locked us into initial assumptions. Agile allowed us to discover what users actually wanted.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>Future Directions</h2>
+                <ul class="decision-list">
+                    <li>Push notification system for assignment reminders</li>
+                    <li>Social features for class study groups</li>
+                    <li>Integration with Iowa State's official services</li>
+                    <li>iOS version to reach more students</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>Links & Resources</h2>
+                <div class="links-grid">
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="link-card">
+                        <h3>GitHub Repository</h3>
+                        <p>Complete Android source code</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://youtu.be/pDhPGkzWStM?si=5NXUNNUuf-Ss_Xb9" target="_blank" class="link-card">
+                        <h3>App Demo Video</h3>
+                        <p>Feature walkthrough and user experience</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <!-- <a href="https://github.com/Meghasyam-23" target="_blank" class="link-card">
+                        <h3>Presentation Slides</h3>
+                        <p>Design thinking and award acceptance</p>
+                        <span class="link-arrow">→</span>
+                    </a> -->
+                </div>
+            </div>
+        </section>
+
+        <section class="project-navigation">
+            <div class="section-container">
+                <h2>Other Projects</h2>
+                <div class="nav-projects">
+                    <a href="plant-disease-detection.html" class="nav-project-card">
+                        <span class="nav-label">AI/ML</span>
+                        <h3>Plant Disease Detection</h3>
+                        <p>ML pipeline for agricultural disease detection</p>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="cinematic-almanac.html" class="nav-project-card">
+                        <span class="nav-label">Full-Stack</span>
+                        <h3>The Cinematic Almanac</h3>
+                        <p>MERN web application for cinema content</p>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="air-drawing.html" class="nav-project-card">
+                        <span class="nav-label">Real-Time AI</span>
+                        <h3>Air Drawing Recognition</h3>
+                        <p>Real-time sketch recognition system</p>
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="section-container">
+                <h2>Let's talk</h2>
+                <p>
+                    Interested in mobile development, user experience design, or team collaboration? Let's connect.
+                </p>
+                <div class="cta-links">
+                    <a href="mailto:syam@iastate.edu" class="contact-link">
+                        <span class="contact-icon">✉</span>
+                        syam@iastate.edu
+                    </a>
+                    <a href="https://linkedin.com/in/meghasyam-peddireddy" target="_blank" class="contact-link">
+                        <span class="contact-icon">in</span>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="contact-link">
+                        <span class="contact-icon">◇</span>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 Meghasyam Peddireddy</p>
+            <div class="footer-divider">•</div>
+        </div>
+    </footer>
+
+    <script src="../main-new.js"></script>
+</body>
+</html>

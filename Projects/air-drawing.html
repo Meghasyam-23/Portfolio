@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Drawing Recognition — Meghasyam Peddireddy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles-new.css">
+    <link rel="stylesheet" href="../styles-project.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">Meghasyam Peddireddy/a>
+            <ul class="nav-links">
+                <li><a href="/projects.html">Work</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#cv">CV</a></li>
+                <li><a href="mailto:syam@iastate.edu" class="cta-link">Get in touch</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-hero">
+            <div class="section-container">
+                <div class="hero-breadcrumb">
+                    <a href="/projects.html">Work</a>
+                    <span>/</span>
+                    <span>Air Drawing Recognition</span>
+                </div>
+                
+                <h1 class="hero-title">Air Drawing Recognition</h1>
+                <p class="hero-subtitle">
+                    Real-time sketch recognition system achieving 99.79% accuracy with sub-100ms inference latency using hybrid CNN-LSTM architecture.
+                </p>
+
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">Jan 2025 – May 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">ML Engineer</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Team</span>
+                        <span class="meta-value">2-person team</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Status</span>
+                        <span class="meta-value">Production Ready</span>
+                    </div>
+                </div>
+
+                <div class="hero-tech-stack">
+                    <span class="tech-badge">TensorFlow</span>
+                    <span class="tech-badge">MediaPipe</span>
+                    <span class="tech-badge">Python</span>
+                    <span class="tech-badge">Real-Time Systems</span>
+                    <span class="tech-badge">Computer Vision</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>The Challenge</h2>
+                <p>
+                    Real-time sketch recognition demands low latency (interactive feel) and high accuracy (correct predictions). The constraint: inference must happen on CPU, no GPU acceleration. Hand tracking must be smooth and robust despite occlusion and lighting changes.
+                </p>
+                <p>
+                    Standard approaches (fine-tuning ResNet) yield 95% accuracy but 500ms+ latency. We needed architectural innovation to hit 99%+ accuracy while staying under 100ms per frame.
+                </p>
+            </div>
+        </section>
+
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>Your Role</h2>
+                <div class="roles-grid">
+                    <div class="role-card">
+                        <h3>Model Architecture Design</h3>
+                        <p>
+                            Designed hybrid CNN-LSTM architecture: CNN extracts spatial features from sketch frames, LSTM captures temporal dependencies across the drawing sequence.
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Hand Tracking & Preprocessing</h3>
+                        <p>
+                            Implemented MediaPipe for real-time hand detection. Applied Kalman filtering for smooth hand position tracking and pinch gesture detection for start/stop signals.
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Performance Optimization</h3>
+                        <p>
+                            Reduced model size through quantization (4× smaller). Profiled inference bottlenecks. Achieved sub-100ms latency on CPU through careful architecture choices.
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Pattern Completion Algorithms</h3>
+                        <p>
+                            Built predictive suggestion system: as user draws, model suggests what they're likely drawing. Useful for fast input and user guidance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>Technical Approach</h2>
+                <p>
+                    Three-stage pipeline: hand tracking → sketch extraction → neural classification.
+                </p>
+                <div class="architecture-diagram">
+                    <div class="arch-layer">
+                        <h3>Input Stage</h3>
+                        <p>Hand Tracking</p>
+                        <ul>
+                            <li>MediaPipe hand detection</li>
+                            <li>Kalman filtering (smoothing)</li>
+                            <li>Pinch detection (start/stop)</li>
+                            <li>30 FPS real-time processing</li>
+                        </ul>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <h3>Processing Stage</h3>
+                        <p>Sketch Extraction</p>
+                        <ul>
+                            <li>Trajectory reconstruction</li>
+                            <li>Stroke normalization</li>
+                            <li>Context windowing</li>
+                            <li>Temporal augmentation</li>
+                        </ul>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <h3>Output Stage</h3>
+                        <p>Classification</p>
+                        <ul>
+                            <li>CNN: spatial features</li>
+                            <li>LSTM: temporal patterns</li>
+                            <li>Dense: class prediction</li>
+                            <li>Confidence scoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>Key Technical Decisions</h2>
+
+                <div class="decision-group">
+                    <h3>1. Hybrid CNN-LSTM Over Pure CNN</h3>
+                    <p>
+                        Pure CNNs (ResNet, VGG) don't naturally capture temporal sequence. Drawing is inherently sequential—pen direction, stroke order, timing all matter.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Why hybrid:</strong> CNN handles spatial features, LSTM captures how features evolve over time
+                        </li>
+                        <li>
+                            <strong>Result:</strong> 99.79% accuracy vs. 95% for CNN alone
+                        </li>
+                        <li>
+                            <strong>Trade-off:</strong> Slightly more complex, but worth accuracy gain
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>2. Kalman Filtering for Hand Position</h3>
+                    <p>
+                        MediaPipe occasionally jitters or drops hands briefly. Raw coordinates are noisy. Kalman filter smooths without adding lag.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Why Kalman:</strong> Optimal for linear systems with noise. Mathematically principled smoothing.
+                        </li>
+                        <li>
+                            <strong>Benefit:</strong> Smooth trajectories, better model input
+                        </li>
+                        <li>
+                            <strong>Latency:</strong> Negligible overhead (&lt;1ms per frame)
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>3. Quantization for Inference Speed</h3>
+                    <p>
+                        Model had 18M parameters. Full precision (float32) → ~72MB, too large for mobile. Quantized to int8 → 18MB, 4× speedup.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Accuracy loss:</strong> &lt;0.1% (99.79% → 99.69%)
+                        </li>
+                        <li>
+                            <strong>Speed gain:</strong> 250ms → 78ms latency
+                        </li>
+                        <li>
+                            <strong>Deployment:</strong> Now viable on-device (mobile, edge)
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>4. Quick Draw Dataset + Custom Augmentation</h3>
+                    <p>
+                        Google's Quick Draw dataset (70M drawings) is massive but was drawn on desktop/tablet, not in air. Applied aggressive augmentation to simulate real-world variation.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Augmentation:</strong> Rotation, scaling, speed variation, occlusion simulation
+                        </li>
+                        <li>
+                            <strong>Result:</strong> Better generalization to hand-drawn sketches
+                        </li>
+                        <li>
+                            <strong>Impact:</strong> Reduced overfit, improved real-world performance
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>Results</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-number">99.79%</div>
+                        <div class="result-label">Test Accuracy</div>
+                        <p>On Quick Draw dataset (1M test samples)</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">78ms</div>
+                        <div class="result-label">Inference Latency</div>
+                        <p>Per prediction, CPU-only (int8 quantized)</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">30 FPS</div>
+                        <div class="result-label">Real-Time Tracking</div>
+                        <p>Hand detection via MediaPipe</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">18MB</div>
+                        <div class="result-label">Model Size</div>
+                        <p>After quantization (viable for mobile)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>What I Learned</h2>
+
+                <div class="lesson-card">
+                    <h3>1. Real-Time Systems Have Different Constraints</h3>
+                    <p>
+                        Accuracy isn't everything when latency matters. 99% accuracy in 500ms is worse than 98% in 100ms. Learned to balance metrics based on user experience.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>2. Temporal Models Require Careful Data Handling</h3>
+                    <p>
+                        LSTM expects sequential data. Ordering matters. Can't just shuffle training data; must respect drawing sequences. Spent time getting data pipeline right.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>3. CPU Optimization is a Skill</h3>
+                    <p>
+                        Quantization, pruning, model distillation—these make models production-viable. GPU-first training neglects practical deployment constraints.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>4. Users Benefit from Immediate Feedback</h3>
+                    <p>
+                        Pattern completion suggestions as they draw are delightful. Real-time feedback loops improve engagement. Important for interactive ML.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>Links</h2>
+                <div class="links-grid">
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="link-card">
+                        <h3>GitHub Repository</h3>
+                        <p>Model code, training scripts, inference code</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="link-card">
+                        <h3>Interactive Demo</h3>
+                        <p>Try the real-time sketch recognition (web-based)</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="link-card">
+                        <h3>Model Weights</h3>
+                        <p>Pre-trained quantized model (TFLite format)</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-navigation">
+            <div class="section-container">
+                <h2>Other Projects</h2>
+                <div class="nav-projects">
+                    <a href="plant-disease-detection.html" class="nav-project-card">
+                        <span class="nav-label">AI/ML</span>
+                        <h3>Plant Disease Detection</h3>
+                        <p>ML pipeline, 1st place state challenge</p>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="compliance-engine.html" class="nav-project-card">
+                        <span class="nav-label">Backend</span>
+                        <h3>Compliance Engine</h3>
+                        <p>Java backend with deterministic logic</p>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="ames-nocturne.html" class="nav-project-card">
+                        <span class="nav-label">Game Dev</span>
+                        <h3>Ames Nocturne</h3>
+                        <p>Full-stack 2D game with AI NPCs</p>
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="section-container">
+                <h2>Let's talk</h2>
+                <p>
+                    Interested in real-time ML, model optimization, or computer vision? Let's connect.
+                </p>
+                <div class="cta-links">
+                    <a href="mailto:syam@iastate.edu" class="contact-link">
+                        <span class="contact-icon">✉</span>
+                        syam@iastate.edu
+                    </a>
+                    <a href="https://linkedin.com/in/meghasyam-peddireddy" target="_blank" class="contact-link">
+                        <span class="contact-icon">in</span>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="contact-link">
+                        <span class="contact-icon">◇</span>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 Meghasyam Peddireddy</p>
+            <div class="footer-divider">•</div>
+            <p>Designed & built with intention</p>
+        </div>
+    </footer>
+
+    <script src="../main-new.js"></script>
+</body>
+</html>

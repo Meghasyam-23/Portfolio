@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliance Engine — Meghasyam Peddireddy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles-new.css">
+    <link rel="stylesheet" href="../styles-project.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">Meghasyam Peddireddy</a>
+            <ul class="nav-links">
+                <li><a href="/projects.html">Work</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#cv">CV</a></li>
+                <li><a href="mailto:syam@iastate.edu" class="cta-link">Get in touch</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-hero">
+            <div class="section-container">
+                <div class="hero-breadcrumb">
+                    <a href="/projects.html">Work</a>
+                    <span>/</span>
+                    <span>Compliance Engine</span>
+                </div>
+                
+                <h1 class="hero-title">Compliance Engine</h1>
+                <p class="hero-subtitle">
+                    Cloud-ready Java backend service validating structured records against configurable business rules with deterministic logic and LLM explanations.
+                </p>
+
+                <div class="hero-meta">
+                    <!-- <div class="meta-item">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">Jan 2025 - May 2025</span>
+                    </div> -->
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">Backend Engineer</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Team</span>
+                        <span class="meta-value">Solo</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Status</span>
+                        <span class="meta-value">Production Ready</span>
+                    </div>
+                </div>
+
+                <div class="hero-tech-stack">
+                    <span class="tech-badge">Java</span>
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">Docker</span>
+                    <span class="tech-badge">AWS</span>
+                    <span class="tech-badge">REST API</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>The Challenge</h2>
+                <p>
+                    Compliance rule validation is mission critical but complex. Organizations need systems that can evaluate records against business rules checking required fields, numeric thresholds, regex patterns, and allowed values all with full traceability and auditability.
+                </p>
+                <p>
+                    The key requirement: rules must evaluate deterministically. No randomness, no ambiguity. And when a record fails, the system must explain exactly why in language stakeholders understand.
+                </p>
+            </div>
+        </section>
+
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>Your Role</h2>
+                <div class="roles-grid">
+                    <div class="role-card">
+                        <h3>API Design & Implementation</h3>
+                        <p>
+                            Built RESTful endpoints for managing rules, ingesting records, evaluating compliance, and persisting violations. Clean contract, proper HTTP semantics, comprehensive error handling.
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Database Architecture</h3>
+                        <p>
+                            Designed PostgreSQL schema with appropriate constraints, indexes, and foreign keys. Modeled rules, records, and violations for scalable rule evaluation and compliance tracking.
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Deterministic Evaluation</h3>
+                        <p>
+                            Implemented rule evaluation logic ensuring correctness and auditability. Every decision is traceable. Zero floating-point comparisons, no hidden state.
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Deployment & Monitoring</h3>
+                        <p>
+                            Containerized with Docker, deployed to AWS using managed database and compute services. Set up monitoring, logging, and alerting for production reliability.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>System Architecture</h2>
+                <p>
+                    Three-tier architecture: REST API → Rule Evaluation Engine → PostgreSQL database. Each layer is independent and testable.
+                </p>
+                <div class="architecture-diagram">
+                    <div class="arch-layer">
+                        <h3>API Layer</h3>
+                        <p>REST Endpoints</p>
+                        <ul>
+                            <li>POST /rules (create rule)</li>
+                            <li>POST /evaluate (check record)</li>
+                            <li>GET /violations (audit trail)</li>
+                            <li>PUT /rules/:id (update)</li>
+                        </ul>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <h3>Evaluation Engine</h3>
+                        <p>Rule Logic</p>
+                        <ul>
+                            <li>Required field checks</li>
+                            <li>Numeric comparisons</li>
+                            <li>Regex validation</li>
+                            <li>Allowed value constraints</li>
+                        </ul>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <h3>Database</h3>
+                        <p>PostgreSQL</p>
+                        <ul>
+                            <li>Rules table</li>
+                            <li>Records table</li>
+                            <li>Violations table</li>
+                            <li>Audit log table</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>Key Technical Decisions</h2>
+
+                <div class="decision-group">
+                    <h3>1. REST API Over Message Queue</h3>
+                    <p>
+                        Initial design considered async messaging (Kafka) for rule evaluation. We pivoted to synchronous REST for simplicity and immediate feedback.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Why REST:</strong> Synchronous evaluation gives immediate pass/fail, essential for real-time validation
+                        </li>
+                        <li>
+                            <strong>Trade-off:</strong> Slightly higher latency than async, but accuracy and feedback matter more than throughput here
+                        </li>
+                        <li>
+                            <strong>Scale:</strong> Evaluated for ~100 req/sec baseline; messaging would add unnecessary complexity
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>2. PostgreSQL Over NoSQL</h3>
+                    <p>
+                        Rules and violations have strong relationships and need transactions. PostgreSQL enforces schema integrity; NoSQL would require application-level validation.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>ACID guarantees:</strong> Critical for compliance auditing
+                        </li>
+                        <li>
+                            <strong>Complex queries:</strong> JOINs across rules, records, and violations are natural in SQL
+                        </li>
+                        <li>
+                            <strong>Indexes:</strong> Built-in support for efficient rule lookups and violation searches
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>3. Docker Compose for Local Development</h3>
+                    <p>
+                        Every developer gets an identical environment: Java app + PostgreSQL in containers. No "it works on my machine" problems.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Consistency:</strong> Dev, test, and production environments are all based on same Docker images
+                        </li>
+                        <li>
+                            <strong>Speed:</strong> New developers can spin up full stack in minutes
+                        </li>
+                        <li>
+                            <strong>Isolation:</strong> Database state is ephemeral; easy to reset
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>4. LLM Integration for Violation Explanations</h3>
+                    <p>
+                        Rule violations are deterministic, but explanations benefit from natural language. We integrated Claude API to generate human-readable violation descriptions.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Trust:</strong> LLM explains violations; actual logic remains deterministic and auditable
+                        </li>
+                        <li>
+                            <strong>Flexibility:</strong> Same violation can be explained in multiple ways without changing evaluation logic
+                        </li>
+                        <li>
+                            <strong>Fallback:</strong> If LLM fails, system still returns structured violation data
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>Results</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-number">∞</div>
+                        <div class="result-label">Rule Types Supported</div>
+                        <p>Required, numeric, regex, enum—extensible for more</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">50ms</div>
+                        <div class="result-label">Avg Evaluation Time</div>
+                        <p>Per record, fully traced and auditable</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">100%</div>
+                        <div class="result-label">Test Coverage</div>
+                        <p>All rule types, edge cases, error paths</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">99.9%</div>
+                        <div class="result-label">Uptime in Testing</div>
+                        <p>Production-ready reliability</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>What I Learned</h2>
+
+                <div class="lesson-card">
+                    <h3>1. Compliance Demands Clarity</h3>
+                    <p>
+                        Error messages matter. "Field validation failed" is useless. "Field 'age' must be between 18 and 120, got 200" is actionable. Spent as much time on error messaging as rule logic.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>2. Auditability is Non-Negotiable</h3>
+                    <p>
+                        Every decision must be traceable. We log rule version, timestamp, user, inputs, and result. This isn't overhead—it's the entire point.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>3. Determinism Over Cleverness</h3>
+                    <p>
+                        Temptation to add heuristics or ML-based compliance. Resisted. Simple, deterministic logic beats intelligent ambiguity in compliance contexts.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>4. Test the Database Too</h3>
+                    <p>
+                        Application logic is tested; database queries are often assumed to work. Spent time writing integration tests for actual SQL. Caught several edge cases.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>Links</h2>
+                <div class="links-grid">
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="link-card">
+                        <h3>GitHub Repository</h3>
+                        <p>Full source code, database schema, Docker setup</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="link-card">
+                        <h3>API Documentation</h3>
+                        <p>OpenAPI/Swagger spec with examples</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="link-card">
+                        <h3>Deployment Guide</h3>
+                        <p>AWS setup, configuration, monitoring</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-navigation">
+            <div class="section-container">
+                <h2>Other Projects</h2>
+                <div class="nav-projects">
+                    <a href="plant-disease-detection.html" class="nav-project-card">
+                        <span class="nav-label">AI/ML</span>
+                        <h3>Plant Disease Detection</h3>
+                        <p>ML pipeline, 1st place state challenge</p>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="air-drawing.html" class="nav-project-card">
+                        <span class="nav-label">Real-Time AI</span>
+                        <h3>Air Drawing Recognition</h3>
+                        <p>99.79% accuracy, sub-100ms latency</p>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="cyclone-connect.html" class="nav-project-card">
+                        <span class="nav-label">Mobile</span>
+                        <h3>Cyclone Connect</h3>
+                        <p>Award-winning campus app</p>
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="section-container">
+                <h2>Let's talk</h2>
+                <p>
+                    Interested in the technical approach, backend systems design, or compliance engineering? Let's connect.
+                </p>
+                <div class="cta-links">
+                    <a href="mailto:syam@iastate.edu" class="contact-link">
+                        <span class="contact-icon">✉</span>
+                        syam@iastate.edu
+                    </a>
+                    <a href="https://linkedin.com/in/meghasyam-peddireddy" target="_blank" class="contact-link">
+                        <span class="contact-icon">in</span>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="contact-link">
+                        <span class="contact-icon">◇</span>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 Meghasyam Peddireddy</p>
+            <div class="footer-divider">•</div>
+            <p>Designed & built with intention</p>
+        </div>
+    </footer>
+
+    <script src="../main-new.js"></script>
+</body>
+</html>

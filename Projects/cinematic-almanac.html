@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cinematic Almanac — Meghasyam Peddireddy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles-new.css">
+    <link rel="stylesheet" href="../styles-project.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">Meghasyam</a>
+            <ul class="nav-links">
+                <li><a href="/projects.html">Work</a></li>
+                <li><a href="/#about">About</a></li>
+                <li><a href="/#cv">CV</a></li>
+                <li><a href="mailto:syam@iastate.edu" class="cta-link">Get in touch</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="project-hero">
+            <div class="section-container">
+                <div class="hero-breadcrumb">
+                    <a href="/projects.html">Work</a>
+                    <span>/</span>
+                    <span>The Cinematic Almanac</span>
+                </div>
+                
+                <h1 class="hero-title">The Cinematic Almanac</h1>
+                <p class="hero-subtitle">
+                    Full-stack single-page web application for exploring curated cinema content across multiple languages with responsive design and user authentication.
+                </p>
+
+                <div class="hero-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Duration</span>
+                        <span class="meta-value">Jan 2023 – May 2023</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Role</span>
+                        <span class="meta-value">Full-Stack Engineer</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Team</span>
+                        <span class="meta-value">Solo</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Status</span>
+                        <span class="meta-value">Complete (Com S 319)</span>
+                    </div>
+                </div>
+
+                <div class="hero-tech-stack">
+                    <span class="tech-badge">React</span>
+                    <span class="tech-badge">Node.js</span>
+                    <span class="tech-badge">MongoDB</span>
+                    <span class="tech-badge">REST API</span>
+                    <span class="tech-badge">Bootstrap</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>The Concept</h2>
+                <p>
+                    A centralized platform for exploring curated cinema from multiple cultures and languages. Users can browse movies, view detailed information, watch trailers, and interact with a catalog maintained by admin users. Demonstrates full-stack web development with MERN stack.
+                </p>
+            </div>
+        </section>
+
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>Your Role</h2>
+                <div class="roles-grid">
+                    <div class="role-card">
+                        <h3>Frontend Development (React)</h3>
+                        <p>
+                            Built responsive single-page application using React and Bootstrap. Dynamic movie cards, search functionality, trailer playback, and interactive UI components. Mobile-first design.
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Backend API (Node.js & Express)</h3>
+                        <p>
+                            Designed and implemented RESTful API endpoints: GET /movies, POST /ratings, DELETE /reviews. Proper HTTP semantics, error handling, and validation.
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Database Design (MongoDB)</h3>
+                        <p>
+                            Modeled collections for movies, users, ratings, reviews. Separate collections per language. Proper indexing for fast queries.
+                        </p>
+                    </div>
+                    <div class="role-card">
+                        <h3>Authentication & Authorization</h3>
+                        <p>
+                            Implemented JWT-based authentication. Role-based access control for admin users. Secure password handling.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>System Architecture</h2>
+                <p>
+                    Three-tier MERN architecture: React frontend → Express API → MongoDB database. Clean separation of concerns.
+                </p>
+                <div class="architecture-diagram">
+                    <div class="arch-layer">
+                        <h3>Frontend</h3>
+                        <p>React SPA</p>
+                        <ul>
+                            <li>Movie browse/search</li>
+                            <li>Detail pages</li>
+                            <li>Ratings & reviews</li>
+                            <li>User authentication UI</li>
+                        </ul>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <h3>API</h3>
+                        <p>Express.js</p>
+                        <ul>
+                            <li>GET/POST/PUT/DELETE endpoints</li>
+                            <li>JWT authentication</li>
+                            <li>Input validation</li>
+                            <li>Error handling</li>
+                        </ul>
+                    </div>
+                    <div class="arch-arrow">↓</div>
+                    <div class="arch-layer">
+                        <h3>Database</h3>
+                        <p>MongoDB</p>
+                        <ul>
+                            <li>Movies collection</li>
+                            <li>Users collection</li>
+                            <li>Ratings & reviews</li>
+                            <li>Multi-language support</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>Key Technical Decisions</h2>
+
+                <div class="decision-group">
+                    <h3>1. React for Frontend</h3>
+                    <p>
+                        Component-based architecture aligns with UI modularity. State management enables responsive interactions.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Why React:</strong> Declarative, component reusability, efficient rendering
+                        </li>
+                        <li>
+                            <strong>Benefit:</strong> Easy to add features without rewriting code
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>2. MongoDB for Flexibility</h3>
+                    <p>
+                        Movie data is semi-structured. Fields vary across languages. MongoDB's flexible schema is a good fit.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Schema flexibility:</strong> Add fields without migration
+                        </li>
+                        <li>
+                            <strong>Language support:</strong> Separate collections per language, shared movie IDs
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>3. JWT Authentication</h3>
+                    <p>
+                        Stateless authentication suitable for REST APIs and single-page applications.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Benefit:</strong> Scales horizontally, no session store needed
+                        </li>
+                        <li>
+                            <strong>Security:</strong> Tokens signed and verified server-side
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="decision-group">
+                    <h3>4. Bootstrap for Styling</h3>
+                    <p>
+                        Rapid UI development without custom CSS. Responsive grid system.
+                    </p>
+                    <ul class="decision-list">
+                        <li>
+                            <strong>Speed:</strong> Pre-built components (cards, modals, forms)
+                        </li>
+                        <li>
+                            <strong>Responsive:</strong> Mobile-friendly by default
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>Results</h2>
+                <div class="results-grid">
+                    <div class="result-card">
+                        <div class="result-number">500+</div>
+                        <div class="result-label">Movies in Database</div>
+                        <p>Across 4+ languages</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">10+</div>
+                        <div class="result-label">API Endpoints</div>
+                        <p>Fully tested and documented</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">100%</div>
+                        <div class="result-label">Responsive Design</div>
+                        <p>Mobile to desktop</p>
+                    </div>
+                    <div class="result-card">
+                        <div class="result-number">A+</div>
+                        <div class="result-label">Final Grade</div>
+                        <p>Com S 319 Course Project</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section alt-bg">
+            <div class="section-container">
+                <h2>What I Learned</h2>
+
+                <div class="lesson-card">
+                    <h3>1. Full-Stack Development is About Integration</h3>
+                    <p>
+                        Components work individually, but integration challenges emerge at boundaries. Learned to debug API-database mismatches, frontend-API contract changes.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>2. API Design Matters</h3>
+                    <p>
+                        Small API design choices cascade to frontend complexity. Consistent naming, proper HTTP methods, sensible error responses make client code elegant.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>3. User Experience Details Win</h3>
+                    <p>
+                        Loading states, error messages, responsive behavior—these polish matter. A feature isn't done until it feels good to use.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <h3>4. Database Schema Evolution is Hard</h3>
+                    <p>
+                        Once users add data, schema changes are expensive. Spent time upfront on data modeling to avoid painful migrations later.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+            <div class="section-container">
+                <h2>Links</h2>
+                <div class="links-grid">
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="link-card">
+                        <h3>GitHub Repository</h3>
+                        <p>Frontend and backend code</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="link-card">
+                        <h3>API Documentation</h3>
+                        <p>Endpoint specs and examples</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="link-card">
+                        <h3>Demo</h3>
+                        <p>Live version (if running)</p>
+                        <span class="link-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-navigation">
+            <div class="section-container">
+                <h2>Other Projects</h2>
+                <div class="nav-projects">
+                    <a href="plant-disease-detection.html" class="nav-project-card">
+                        <span class="nav-label">AI/ML</span>
+                        <h3>Plant Disease Detection</h3>
+                        <p>ML pipeline, 1st place state challenge</p>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="cyclone-connect.html" class="nav-project-card">
+                        <span class="nav-label">Mobile</span>
+                        <h3>Cyclone Connect</h3>
+                        <p>Award-winning campus app</p>
+                        <span class="arrow">→</span>
+                    </a>
+                    <a href="compliance-engine.html" class="nav-project-card">
+                        <span class="nav-label">Backend</span>
+                        <h3>Compliance Engine</h3>
+                        <p>Java backend with deterministic logic</p>
+                        <span class="arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="section-container">
+                <h2>Let's talk</h2>
+                <p>
+                    Interested in full-stack development, web architecture, or UX? Let's connect.
+                </p>
+                <div class="cta-links">
+                    <a href="mailto:syam@iastate.edu" class="contact-link">
+                        <span class="contact-icon">✉</span>
+                        syam@iastate.edu
+                    </a>
+                    <a href="https://linkedin.com/in/meghasyam-peddireddy" target="_blank" class="contact-link">
+                        <span class="contact-icon">in</span>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/Meghasyam-23" target="_blank" class="contact-link">
+                        <span class="contact-icon">◇</span>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>© 2025 Meghasyam Peddireddy</p>
+            <div class="footer-divider">•</div>
+            <p>Designed & built with intention</p>
+        </div>
+    </footer>
+
+    <script src="../main-new.js"></script>
+</body>
+</html>
