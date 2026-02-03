@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meghasyam Peddireddy — CS Engineer</title>
+    <title>Meghasyam Peddireddy – CS Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles-new.css">
     <style>
-        /* Hero using dark theme */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -65,7 +64,6 @@
         .featured-projects h2 { color: #ffffff; }
         .featured-projects p { color: #b0b0b0; }
         
-        /* EXPERIENCE SECTION WITH ENHANCED UI */
         .experience-section { 
             padding: 4rem 2rem; 
             background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
@@ -285,7 +283,6 @@
             color: #0088ff;
         }
 
-        /* Skills badge in experience */
         .skills-tags {
             display: flex;
             flex-wrap: wrap;
@@ -445,17 +442,16 @@
         <nav class="nav">
             <a href="/" class="logo">Meghasyam Peddireddy</a>
             <ul class="nav-links">
-                <li><a href="/projects.html">Work</a></li>
+                <!-- <li><a href="/projects.html">Work</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#cv">CV</a></li>
+                <li><a href="#cv">CV</a></li> -->
                 <li><a href="mailto:syam@iastate.edu" class="cta-link">Get in touch</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- HERO SECTION - Full page with animation -->
         <section class="hero">
             <canvas id="particles" class="particles"></canvas>
             <div class="hero-content">
@@ -483,7 +479,6 @@
             </div>
         </section>
 
-        <!-- ABOUT SECTION - Appears after scrolling -->
         <section id="about" class="about">
             <div class="section-container">
                 <div class="about-content">
@@ -498,85 +493,65 @@
             </div>
         </section>
 
-        <!-- FEATURED PROJECTS -->
         <section class="featured-projects">
-  <div class="section-container">
-    <h2>Featured work</h2>
+            <div class="section-container">
+                <h2>Featured work</h2>
+                <div class="projects-grid">
+                    <a href="/projects/plant-disease-detection.html" class="project-item featured" style="--accent-rgb: 80, 220, 140;">
+                        <div class="project-year">2025</div>
+                        <h3>Plant Disease Detection</h3>
+                        <p>Machine learning pipeline for agricultural disease detection. 1st place Pi-515 Innovation Challenge.</p>
+                        <div class="project-tags"><span>AI/ML</span><span>Python</span><span>TensorFlow</span></div>
+                        <div class="featured-visual"></div>
+                    </a>
 
-    <div class="projects-grid">
-      <!-- FEATURED -->
-      <a href="/projects/plant-disease-detection.html"
-         class="project-item featured"
-         style="--accent-rgb: 80, 220, 140;">
-        <div class="project-year">2025</div>
-        <h3>Plant Disease Detection</h3>
-        <p>Machine learning pipeline for agricultural disease detection. 1st place Pi-515 Innovation Challenge.</p>
-        <div class="project-tags"><span>AI/ML</span><span>Python</span><span>TensorFlow</span></div>
+                    <a href="/projects/compliance-engine.html" class="project-item" style="--accent-rgb: 55, 220, 230;">
+                        <div class="project-year">2025</div>
+                        <h3>Compliance Engine</h3>
+                        <p>Cloud-ready Java backend for rule validation with deterministic logic and LLM explanations.</p>
+                        <div class="project-tags"><span>Backend</span><span>Java</span><span>AWS</span></div>
+                    </a>
 
-        <!-- right-side glow panel (like the screenshot) -->
-        <div class="featured-visual"></div>
-      </a>
+                    <a href="/projects/air-drawing.html" class="project-item" style="--accent-rgb: 125, 95, 255;">
+                        <div class="project-year">2025</div>
+                        <h3>Air Drawing Recognition</h3>
+                        <p>Real-time sketch recognition with CNN-LSTM achieving 99.79% accuracy and sub-100ms latency.</p>
+                        <div class="project-tags"><span>Real-time AI</span><span>TensorFlow</span><span>MediaPipe</span></div>
+                    </a>
 
-      <a href="/projects/compliance-engine.html"
-         class="project-item"
-         style="--accent-rgb: 55, 220, 230;">
-        <div class="project-year">2025</div>
-        <h3>Compliance Engine</h3>
-        <p>Cloud-ready Java backend for rule validation with deterministic logic and LLM explanations.</p>
-        <div class="project-tags"><span>Backend</span><span>Java</span><span>AWS</span></div>
-      </a>
+                    <a href="/projects/ames-nocturne.html" class="project-item" style="--accent-rgb: 255, 140, 55;">
+                        <div class="project-year">2023–Now</div>
+                        <h3>Ames Nocturne</h3>
+                        <p>Full-stack 2D game with procedural generation, AI-driven NPCs, and modular architecture.</p>
+                        <div class="project-tags"><span>Game Dev</span><span>Unity</span><span>C#</span></div>
+                    </a>
 
-      <a href="/projects/air-drawing.html"
-         class="project-item"
-         style="--accent-rgb: 125, 95, 255;">
-        <div class="project-year">2025</div>
-        <h3>Air Drawing Recognition</h3>
-        <p>Real-time sketch recognition with CNN-LSTM achieving 99.79% accuracy and sub-100ms latency.</p>
-        <div class="project-tags"><span>Real-time AI</span><span>TensorFlow</span><span>MediaPipe</span></div>
-      </a>
+                    <a href="/projects/cyclone-connect.html" class="project-item" style="--accent-rgb: 70, 210, 200;">
+                        <div class="project-year">2023</div>
+                        <h3>Cyclone Connect</h3>
+                        <p>Award-winning Android app for campus connectivity. Best Project of the Semester.</p>
+                        <div class="project-tags"><span>Mobile</span><span>Android</span><span>Java</span></div>
+                    </a>
 
-      <a href="/projects/ames-nocturne.html"
-         class="project-item"
-         style="--accent-rgb: 255, 140, 55;">
-        <div class="project-year">2023–Now</div>
-        <h3>Ames Nocturne</h3>
-        <p>Full-stack 2D game with procedural generation, AI-driven NPCs, and modular architecture.</p>
-        <div class="project-tags"><span>Game Dev</span><span>Unity</span><span>C#</span></div>
-      </a>
+                    <a href="/projects/cinematic-almanac.html" class="project-item" style="--accent-rgb: 95, 120, 255;">
+                        <div class="project-year">2023</div>
+                        <h3>The Cinematic Almanac</h3>
+                        <p>Full-stack web app for curated cinema with React, Node.js, and MongoDB.</p>
+                        <div class="project-tags"><span>Full-Stack</span><span>React</span><span>Node.js</span></div>
+                    </a>
+                </div>
 
-      <a href="/projects/cyclone-connect.html"
-         class="project-item"
-         style="--accent-rgb: 70, 210, 200;">
-        <div class="project-year">2023</div>
-        <h3>Cyclone Connect</h3>
-        <p>Award-winning Android app for campus connectivity. Best Project of the Semester.</p>
-        <div class="project-tags"><span>Mobile</span><span>Android</span><span>Java</span></div>
-      </a>
+                <div class="view-all-projects">
+                    <a href="/projects.html">View all projects <span class="arrow">→</span></a>
+                </div>
+            </div>
+        </section>
 
-      <a href="/projects/cinematic-almanac.html"
-         class="project-item"
-         style="--accent-rgb: 95, 120, 255;">
-        <div class="project-year">2023</div>
-        <h3>The Cinematic Almanac</h3>
-        <p>Full-stack web app for curated cinema with React, Node.js, and MongoDB.</p>
-        <div class="project-tags"><span>Full-Stack</span><span>React</span><span>Node.js</span></div>
-      </a>
-    </div>
-
-    <div class="view-all-projects">
-      <a href="/projects.html">View all projects <span class="arrow">→</span></a>
-    </div>
-  </div>
-</section>
-
-
-        <!-- EXPERIENCE SECTION WITH ENHANCED UI -->
         <section id="experience" class="experience-section">
             <div class="experience-container">
                 <h2>Professional Experience</h2>
                 <p class="experience-subtitle">Building impact across technical support, engineering, and leadership</p>
                 <div class="experience-timeline">
-                    <!-- Desktop Support Technician -->
                     <div class="experience-item">
                         <div class="experience-period">
                             <span><i class="fas fa-calendar-alt"></i> May 2024 – Present</span>
@@ -611,7 +586,6 @@
                         </div>
                     </div>
 
-                    <!-- Lab Monitor -->
                     <div class="experience-item">
                         <div class="experience-period">
                             <span><i class="fas fa-calendar-alt"></i> Jan 2024 - May 2024</span>
@@ -642,7 +616,6 @@
                         </div>
                     </div>
 
-                    <!-- VP & Treasurer -->
                     <div class="experience-item">
                         <div class="experience-period">
                             <span><i class="fas fa-calendar-alt"></i> Current Role</span>
@@ -675,7 +648,6 @@
             </div>
         </section>
 
-        <!-- CV SECTION -->
         <section id="cv" class="cv-section">
             <div class="section-container">
                 <h2>Full Credentials</h2>
@@ -689,7 +661,6 @@
             </div>
         </section>
 
-        <!-- CTA SECTION -->
         <section class="cta-section">
             <div class="section-container">
                 <h2>Let's talk</h2>
@@ -729,7 +700,6 @@
         </div>
     </footer>
 
-    <!-- Particle Animation -->
     <script>
         const canvas = document.getElementById('particles');
         if (canvas) {
