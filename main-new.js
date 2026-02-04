@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initScrollAnimations();
     initHoverEffects();
+    initScrollProgress();
+    initActiveNavOnScroll();
 });
 
 function initNavigation() {
@@ -262,3 +264,82 @@ initMobileMenu();
 initScrollToTop();
 initPerformanceMonitoring();
 initKeyboardNavigation();
+initScrollProgress();
+initActiveNavOnScroll();
+
+// Scroll Progress Bar & Header Effect
+function initScrollProgress() {
+    const progressBar = document.getElementById('scrollProgress');
+    const header = document.getElementById('mainHeader');
+
+    if (!progressBar) return;
+
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+
+                progressBar.style.width = scrollPercent + '%';
+
+                // Header scroll effect
+                if (header) {
+                    if (scrollTop > 50) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                }
+
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+}
+
+// Active Navigation on Scroll (Scrollspy)
+function initActiveNavOnScroll() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a[href^="#"], .nav-links a[href^="/#"]');
+
+    if (sections.length === 0 || navLinks.length === 0) return;
+
+    let ticking = false;
+
+    function updateActiveNav() {
+        const scrollPos = window.scrollY + 150;
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    const href = link.getAttribute('href');
+                    if (href === '#' + sectionId || href === '/#' + sectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                updateActiveNav();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+
+    // Initial call
+    updateActiveNav();
+}

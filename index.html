@@ -10,6 +10,82 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles-new.css">
     <style>
+        /* ========== SCROLL PROGRESS INDICATOR ========== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #0066cc, #0099ff);
+            z-index: 1000;
+            transition: width 0.1s ease-out;
+        }
+
+        /* ========== ENHANCED HEADER/NAV ========== */
+        .header {
+            position: fixed !important;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(15, 15, 15, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            background: rgba(15, 15, 15, 0.95);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav {
+            padding: 1rem 2rem !important;
+        }
+
+        .nav-links {
+            gap: 0.5rem !important;
+        }
+
+        .nav-links a {
+            padding: 0.6rem 1.2rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            color: #b0b0b0 !important;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffffff !important;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .nav-links a.active {
+            color: #0066cc !important;
+            background: rgba(0, 102, 204, 0.1);
+        }
+
+        .nav-links .cta-link {
+            background: #0066cc !important;
+            color: #ffffff !important;
+            padding: 0.6rem 1.5rem;
+            font-weight: 600;
+        }
+
+        .nav-links .cta-link:hover {
+            background: #0077ee !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
+        }
+
+        /* Active section indicator */
+        .nav-links a::after {
+            display: none;
+        }
+
+        /* ========== HERO SECTION ========== */
         .hero {
             position: relative;
             min-height: 100vh;
@@ -18,6 +94,7 @@
             justify-content: center;
             overflow: hidden;
             background: #0f0f0f;
+            padding-top: 80px; /* Account for fixed header */
         }
 
         .particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.08; z-index: 0; }
@@ -48,25 +125,160 @@
         .photo-img { width: 100%; height: 100%; object-fit: cover; object-position: center; transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
         .photo-frame:hover .photo-img { transform: scale(1.05); }
 
-        .btn { display: inline-block; padding: 0.75rem 2rem; border: none; border-radius: 0.5rem; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); text-decoration: none; }
-        .btn-primary { background: #0066cc; color: #ffffff; box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3); }
-        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0, 102, 204, 0.4); }
-        .btn-secondary { background: transparent; color: #ffffff; border: 1px solid #2a2a2a; }
-        .btn-secondary:hover { border-color: #0066cc; color: #0066cc; background: #1a1a1a; transform: translateY(-3px); }
+        /* ========== ENHANCED BUTTONS (CTAs) ========== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 0.75rem;
+            font-size: 1.05rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            min-width: 160px;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #0066cc 0%, #0077ee 100%);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        .btn-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 102, 204, 0.5);
+        }
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+        .btn-secondary:hover {
+            border-color: #0066cc;
+            color: #0066cc;
+            background: rgba(0, 102, 204, 0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.2);
+        }
 
-        .about { padding: 4rem 2rem; background: #0f0f0f; color: #ffffff; min-height: auto; }
-        .about .section-container { max-width: 800px; margin: 0 auto; }
-        .about h2 { color: #ffffff; font-size: 2.5rem; margin-bottom: 2rem; text-align: center; }
-        .about-content { display: block; }
-        .about-text { color: #b0b0b0; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; }
+        .hero-actions {
+            display: flex;
+            gap: 1.25rem;
+            margin-top: 0.5rem;
+        }
+
+        /* ========== ABOUT SECTION ========== */
+        .about {
+            padding: 8rem 2rem;
+            background: #0f0f0f;
+            color: #ffffff;
+            min-height: auto;
+            position: relative;
+        }
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #0066cc, transparent);
+        }
+        .about .section-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .about h2 {
+            color: #ffffff;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .about-label {
+            display: block;
+            text-align: center;
+            color: #0066cc;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 3rem;
+        }
+        .about-content {
+            display: block;
+        }
+        .about-text {
+            color: #b0b0b0;
+            font-size: 1.2rem;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .about-text:last-child {
+            margin-bottom: 0;
+        }
         
-        .featured-projects { padding: 4rem 2rem; background: #1a1a1a; }
-        .featured-projects h2 { color: #ffffff; }
+        /* ========== FEATURED PROJECTS ========== */
+        .featured-projects {
+            padding: 8rem 2rem;
+            background: #0a0a0a;
+            position: relative;
+        }
+        .featured-projects::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        }
+        .featured-projects h2 {
+            color: #ffffff;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .featured-projects .section-label {
+            display: block;
+            color: #0066cc;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 3rem;
+        }
         .featured-projects p { color: #b0b0b0; }
+
+        .projects-grid {
+            gap: 1.5rem !important;
+            margin-bottom: 4rem;
+        }
         
-        .experience-section { 
-            padding: 4rem 2rem; 
-            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+        /* ========== EXPERIENCE SECTION ========== */
+        .experience-section {
+            padding: 8rem 2rem;
+            background: #0f0f0f;
             position: relative;
         }
 
@@ -74,25 +286,38 @@
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
-            right: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
             height: 1px;
             background: linear-gradient(90deg, transparent, #0066cc, transparent);
         }
 
-        .experience-section h2 { 
-            color: #ffffff; 
-            font-size: 2.5rem; 
-            margin-bottom: 0.5rem;
+        .experience-label {
+            display: block;
+            text-align: center;
+            color: #0066cc;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .experience-section h2 {
+            color: #ffffff;
+            font-size: 3rem;
+            margin-bottom: 1rem;
             text-align: center;
             letter-spacing: -0.02em;
+            font-weight: 700;
         }
 
         .experience-subtitle {
             text-align: center;
             color: #808080;
-            font-size: 1rem;
-            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
             font-weight: 400;
         }
 
@@ -311,56 +536,101 @@
             border-color: #0066cc;
         }
         
-        .cv-section { 
-            padding: 4rem 2rem; 
-            background: #1a1a1a; 
+        /* ========== CV SECTION ========== */
+        .cv-section {
+            padding: 6rem 2rem;
+            background: #0a0a0a;
             min-height: auto;
             position: relative;
         }
 
-        .cv-section::after {
+        .cv-section::before {
             content: '';
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
             right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        }
+
+        .cv-section .section-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cv-label {
+            display: block;
+            text-align: center;
+            color: #0066cc;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .cv-section h2 {
+            color: #ffffff;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            letter-spacing: -0.02em;
+            font-weight: 700;
+        }
+
+        .cv-content {
+            text-align: center;
+        }
+
+        .cv-section p {
+            color: #b0b0b0;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        /* ========== CTA SECTION ========== */
+        .cta-section {
+            padding: 8rem 2rem;
+            background: #0f0f0f;
+            color: #ffffff;
+            text-align: center;
+            position: relative;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
             height: 1px;
             background: linear-gradient(90deg, transparent, #0066cc, transparent);
         }
 
-        .cv-section .section-container { 
-            max-width: 800px; 
-            margin: 0 auto; 
-        }
-        
-        .cv-section h2 { 
-            color: #ffffff; 
-            font-size: 2.5rem; 
-            margin-bottom: 2rem; 
-            text-align: center;
-            letter-spacing: -0.02em;
-        }
-        
-        .cv-content { 
-            text-align: center; 
-        }
-        
-        .cv-section p { 
-            color: #b0b0b0; 
-            font-size: 1.1rem; 
-            line-height: 1.8; 
-            margin-bottom: 2rem; 
+        .cta-label {
+            display: block;
+            color: #0066cc;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
         }
 
-        .cta-section { 
-            padding: 4rem 2rem; 
-            background: #0f0f0f; 
-            color: #ffffff; 
-            text-align: center; 
+        .cta-section h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
         }
-        
-        .cta-section p { 
-            color: #b0b0b0; 
+
+        .cta-section > .section-container > p {
+            color: #b0b0b0;
+            font-size: 1.15rem;
+            margin-bottom: 3rem;
         }
 
         .cta-links {
@@ -438,7 +708,10 @@
     </style>
 </head>
 <body>
-    <header class="header">
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <header class="header" id="mainHeader">
         <nav class="nav">
             <a href="/" class="logo">Meghasyam Peddireddy</a>
             <ul class="nav-links">
@@ -481,10 +754,11 @@
 
         <section id="about" class="about">
             <div class="section-container">
+                <span class="about-label">Get to know me</span>
+                <h2>About</h2>
                 <div class="about-content">
-                    <h2>About</h2>
                     <p class="about-text">
-                        I'm a Computer Science student passionate about full-stack development, machine learning, and systems design. My work spans from building production-grade backends to crafting intelligent game engines always with a focus on clear communication and thoughtful architecture.
+                        I'm a Computer Science student passionate about full-stack development, machine learning, and systems design. My work spans from building production-grade backends to crafting intelligent game engines—always with a focus on clear communication and thoughtful architecture.
                     </p>
                     <p class="about-text">
                         What drives me is the intersection of technical depth and clarity. Great software isn't just about elegant code; it's about understanding systems holistically and presenting them in ways that resonate.
@@ -493,9 +767,10 @@
             </div>
         </section>
 
-        <section class="featured-projects">
+        <section id="work" class="featured-projects">
             <div class="section-container">
-                <h2>Featured work</h2>
+                <span class="section-label">Selected Projects</span>
+                <h2>Featured Work</h2>
                 <div class="projects-grid">
                     <a href="/Projects/plant-disease-detection.html" class="project-item featured" style="--accent-rgb: 80, 220, 140;">
                         <div class="project-year">2025</div>
@@ -549,7 +824,8 @@
 
         <section id="experience" class="experience-section">
             <div class="experience-container">
-                <h2>Professional Experience</h2>
+                <span class="experience-label">Career Journey</span>
+                <h2>Experience</h2>
                 <p class="experience-subtitle">Building impact across technical support, engineering, and leadership</p>
                 <div class="experience-timeline">
                     <div class="experience-item">
@@ -650,20 +926,22 @@
 
         <section id="cv" class="cv-section">
             <div class="section-container">
+                <span class="cv-label">Download</span>
                 <h2>Full Credentials</h2>
                 <div class="cv-content">
                     <p>Download my complete CV for detailed information about my education, technical skills, certifications, and comprehensive project portfolio.</p>
                     <a href="Meghasyam_Peddireddy_CV.pdf" class="btn btn-primary" download>
-                        <i class="fas fa-download" style="margin-right: 0.5rem;"></i>
+                        <i class="fas fa-download" style="margin-right: 0.75rem;"></i>
                         Download CV
                     </a>
                 </div>
             </div>
         </section>
 
-        <section class="cta-section">
+        <section id="contact" class="cta-section">
             <div class="section-container">
-                <h2>Let's talk</h2>
+                <span class="cta-label">Get in Touch</span>
+                <h2>Let's Talk</h2>
                 <p>Interested in discussing a project, opportunity, or just connecting? I'm always happy to hear from you.</p>
                 <div class="cta-links">
                     <a href="mailto:syam@iastate.edu" class="contact-link">
