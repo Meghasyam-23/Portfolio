@@ -1444,10 +1444,53 @@ footer {
   --accent-faint: rgba(70, 210, 200, 0.08);
 }
 
-.project-item[style*="--accent-rgb: 95, 120, 255"] {
+.project-item[style*="--accent-rgb: 95, 120, 255"],
+.project-card[style*="--accent-rgb: 95, 120, 255"] {
   --accent: #5f78ff;
   --accent-soft: rgba(95, 120, 255, 0.18);
   --accent-faint: rgba(95, 120, 255, 0.08);
+}
+
+.project-card[style*="--accent-rgb: 80, 220, 140"] {
+  --accent: #50dc8c;
+  --accent-soft: rgba(80, 220, 140, 0.18);
+  --accent-faint: rgba(80, 220, 140, 0.08);
+}
+
+.project-card[style*="--accent-rgb: 55, 220, 230"] {
+  --accent: #37dce6;
+  --accent-soft: rgba(55, 220, 230, 0.18);
+  --accent-faint: rgba(55, 220, 230, 0.08);
+}
+
+.project-card[style*="--accent-rgb: 125, 95, 255"] {
+  --accent: #7d5fff;
+  --accent-soft: rgba(125, 95, 255, 0.18);
+  --accent-faint: rgba(125, 95, 255, 0.08);
+}
+
+.project-card[style*="--accent-rgb: 255, 140, 55"] {
+  --accent: #ff8c37;
+  --accent-soft: rgba(255, 140, 55, 0.18);
+  --accent-faint: rgba(255, 140, 55, 0.08);
+}
+
+.project-card[style*="--accent-rgb: 70, 210, 200"] {
+  --accent: #46d2c8;
+  --accent-soft: rgba(70, 210, 200, 0.18);
+  --accent-faint: rgba(70, 210, 200, 0.08);
+}
+
+.project-card[style*="--accent-rgb: 255, 95, 95"] {
+  --accent: #ff5f5f;
+  --accent-soft: rgba(255, 95, 95, 0.18);
+  --accent-faint: rgba(255, 95, 95, 0.08);
+}
+
+.project-card[style*="--accent-rgb: 255, 180, 50"] {
+  --accent: #ffb432;
+  --accent-soft: rgba(255, 180, 50, 0.18);
+  --accent-faint: rgba(255, 180, 50, 0.08);
 }
 
 .project-item .project-visual {

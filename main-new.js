@@ -113,12 +113,13 @@ function initCursorTracking() {
 
 function initPageTransitions() {
     const links = document.querySelectorAll('a');
-    
+
     links.forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
-            
-            if (href && !href.startsWith('http') && !href.startsWith('mailto') && !href.startsWith('tel')) {
+
+            // Skip anchor links, external links, and special protocols
+            if (href && !href.startsWith('#') && !href.startsWith('http') && !href.startsWith('mailto') && !href.startsWith('tel')) {
                 document.body.style.opacity = '0';
                 document.body.style.transition = 'opacity 0.3s ease-out';
             }
