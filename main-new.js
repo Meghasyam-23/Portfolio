@@ -120,8 +120,9 @@ function initPageTransitions() {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
 
-            // Skip anchor links, external links, and special protocols
-            if (href && !href.startsWith('#') && !href.startsWith('http') && !href.startsWith('mailto') && !href.startsWith('tel') && !link.hasAttribute('download')) {
+            // Only apply fade transition to internal page navigations (.html links)
+            // Skip anchor links, external links, special protocols, download links, and non-HTML files
+            if (href && href.endsWith('.html') && !link.hasAttribute('download')) {
                 document.body.style.opacity = '0';
                 document.body.style.transition = 'opacity 0.3s ease-out';
             }
