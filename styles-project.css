@@ -596,3 +596,24 @@
         max-width: 100%;
     }
 }
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 1.6rem; }
+    .hero-subtitle { font-size: 0.95rem; }
+
+    .project-section h2 { font-size: 1.3rem; }
+    .project-section h3 { font-size: 1rem; }
+    .project-section p { font-size: 0.95rem; }
+
+    .result-card { padding: 1.25rem; }
+    .result-number { font-size: 1.75rem; }
+
+    .decision-group { padding: 1.25rem; }
+    .lesson-card { padding: 1.25rem; }
+    .link-card { padding: 1.25rem; }
+    .role-card { padding: 1.25rem; }
+    .nav-project-card { padding: 1.25rem; }
+
+    .tech-badge { padding: 0.35rem 0.75rem; font-size: 0.75rem; }
+    .hero-tech-stack { gap: 0.5rem; }
+}
