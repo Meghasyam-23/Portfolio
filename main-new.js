@@ -121,7 +121,7 @@ function initPageTransitions() {
             const href = link.getAttribute('href');
 
             // Skip anchor links, external links, and special protocols
-            if (href && !href.startsWith('#') && !href.startsWith('http') && !href.startsWith('mailto') && !href.startsWith('tel')) {
+            if (href && !href.startsWith('#') && !href.startsWith('http') && !href.startsWith('mailto') && !href.startsWith('tel') && !link.hasAttribute('download')) {
                 document.body.style.opacity = '0';
                 document.body.style.transition = 'opacity 0.3s ease-out';
             }
